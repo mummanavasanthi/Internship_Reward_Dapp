@@ -1,70 +1,114 @@
-# Getting Started with Create React App
+# Internship Reward DApp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Internship Reward DApp is a React and Node.js based web application developed to demonstrate frontend-backend integration in a Web3-inspired reward distribution system.
 
-## Available Scripts
+The application allows users to connect a MetaMask wallet, distribute rewards to multiple wallet addresses, view distributed addresses in a dynamic table, and check reward balances.
 
-In the project directory, you can run:
+---
+## Features
 
-### `npm start`
+* MetaMask Wallet Connection
+* React Frontend Interface
+* Express.js Backend API
+* Reward Distribution System
+* Dynamic Address Management
+* Balance Checking Functionality
+* Frontend to Backend Communication using Axios
+* Responsive User Interface
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+### Clone Repository
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+git clone <repository-url>
+cd Internship_Reward_Dapp
+```
 
-### `npm run build`
+### Install Frontend Dependencies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Start Frontend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm start
+```
 
-### `npm run eject`
+Frontend runs at:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```text
+http://localhost:3000
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Backend Setup
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Navigate to backend folder:
 
-## Learn More
+```bash
+cd backend
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Install dependencies:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm install
+```
 
-### Code Splitting
+Start server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+node server.js
+```
 
-### Analyzing the Bundle Size
+Backend runs at:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```text
+http://localhost:5000
+```
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## API Endpoints
 
-### Advanced Configuration
+### Get Reward Data
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```http
+GET /reward
+```
 
-### Deployment
+### Store Reward Distribution
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```http
+POST /reward
+```
 
-### `npm run build` fails to minify
+### Sample Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```json
+{
+  "addresses": [
+    "0x111",
+    "0x222",
+    "0x333"
+  ]
+}
+```
+
+---
+
+## Application Workflow
+
+1. Connect MetaMask wallet.
+2. Enter wallet addresses separated by commas.
+3. Click **Distribute Token**.
+4. Frontend sends data to Express backend using Axios.
+5. Backend stores reward information.
+6. Distributed addresses are displayed in a dynamic table.
+7. Users can search an address and view its reward balance.
